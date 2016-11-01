@@ -2,6 +2,13 @@
 
 {% block content %}
 <!--(tr>td#pln$-$*2)*7-->
+<div class="col-md-4">
+    <form action="{% url 'planner:add_schedule' %}" method="POST">
+        {{ form.as_p }}
+        <button type="submit">저장</button>
+    </form>
+</div>
+
 <div class="col-md-8">
 {% for i in "abcdefghijklmnopqrstuvwx" %}
         <table class="table-bordered col-xs-2">
