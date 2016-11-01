@@ -8,7 +8,8 @@ from . import views
 
 urlpatterns = [
     # 용필
-    url(),
+    url(r'^index/$', views.index_schedule, name='index_schedule'),
+
 
 
 
@@ -18,7 +19,7 @@ urlpatterns = [
 
 
     # 병현
-    url(),
+
 
 
 
