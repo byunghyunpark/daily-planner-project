@@ -3,9 +3,49 @@
 {% block content %}
 <!--(tr>td#pln$-$*2)*7-->
 <div class="col-md-4">
-    <form action="{% url 'planner:add_schedule' %}" method="POST">
-        {{ form.as_p }}
+    <form action="{% url 'planner:add_schedule' %}" method="POST">{% csrf_token %}
+
+        <div class="form-group">
+            <label for="input-name" class="col-sm-2 control-label">할일</label>
+            <input type="text" class="form-control" name="name" id="input-name">
+        </div>
+
+        <div class="form-group">
+            <div class='input-group date' id='datetimepicker6'>
+                <input type='text' class="form-control" name="plan_start">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class='input-group date' id='datetimepicker7'>
+                <input type='text' class="form-control" name="plan_finish">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker6').datetimepicker({format: 'YYYY-MM-DD HH:mm'});
+                $('#datetimepicker7').datetimepicker({
+                    format: 'YYYY-MM-DD HH:mm',
+                    useCurrent: false //Important! See issue #1075
+                });
+                $("#datetimepicker6").on("dp.change", function (e) {
+                    $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+                });
+                $("#datetimepicker7").on("dp.change", function (e) {
+                    $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+                });
+            });
+        </script>
+
         <button type="submit">저장</button>
+
     </form>
 </div>
 

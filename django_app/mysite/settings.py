@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'planner',
+    'bootstrap3_datetime',
+
 ]
 
 MIDDLEWARE = [
