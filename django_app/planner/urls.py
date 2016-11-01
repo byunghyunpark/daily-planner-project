@@ -18,10 +18,6 @@ urlpatterns = [
 
 
     # 병현
-
-
-
-
-
+    url(r'^score/$', views.score, name='score'),
 
 ]
