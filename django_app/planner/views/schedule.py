@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from planner.forms import ScheduleAddForm
+from planner.models import Schedule
 
 __all__ = [
     'add_schedule',
@@ -9,8 +10,11 @@ __all__ = [
 
 def index_schedule(request):
     form = ScheduleAddForm()
+    schedules = Schedule.objects.all()
+
     context ={
-        'form': form
+        'form': form,
+        'schedules': schedules
     }
     return render(request, 'planner/index_schedule.html', context)
 

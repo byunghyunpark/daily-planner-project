@@ -1,13 +1,15 @@
 {% extends 'common/base.html' %}
+{% load tz %}
 
 {% block content %}
 <!--(tr>td#pln$-$*2)*7-->
 <div class="col-md-4">
     <form action="{% url 'planner:add_schedule' %}" method="POST">
         {{ form.as_p }}
-        <button type="submit">저장</button>
+        <button type="submit" onclick="photoLike({{photo.pk}},'like')">저장</button>
     </form>
 </div>
+
 
 <div class="col-md-8">
 {% for i in "abcdefghijklmnopqrstuvwx" %}
@@ -42,4 +44,9 @@
         </table>
 {% endfor %}
 </div>
+
+{% for schedule in schedules %}
+        <script>color_check("{{schedule.plan_start|date:'c'}}","{{schedule.plan_finish|date:'c'}}")</script>
+{% endfor %}
+
 {% endblock %}
