@@ -8,7 +8,7 @@ from . import views
 
 urlpatterns = [
     # 용필
-    url(),
+
 
 
 
@@ -18,7 +18,7 @@ urlpatterns = [
 
 
     # 병현
-    url(),
+
 
 
 
