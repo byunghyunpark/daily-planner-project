@@ -2,37 +2,37 @@
 
 {% block content %}
 <!--(tr>td#pln$-$*2)*7-->
+<div class="col-md-8">
 {% for i in "abcdefghijklmnopqrstuvwx" %}
-    {% for j in "abcdefg" %}
-        <table class="table-bordered">
-            <tr>
-                <td colspan="2">1</td>
+        <table class="table-bordered col-xs-2">
+            <tr class="custom_th">
+                <th colspan="2">{{forloop.counter}}</th>
             </tr>
             <tr>
-                <td id="p{{ forloop.counter }}-1">plan</td>
-                <td id="r{{ forloop.counter }}-1">result</td>
+                <td class="custom_td" id="p{{ forloop.counter }}-1"></td>
+                <td class="custom_td" id="r{{ forloop.counter }}-1"></td>
             </tr>
             <tr>
-                <td id="p{{ forloop.counter }}-2">plan</td>
-                <td id="r{{ forloop.counter }}-2">result</td>
+                <td class="custom_td" id="p{{ forloop.counter }}-2"></td>
+                <td class="custom_td" id="r{{ forloop.counter }}-2"></td>
             </tr>
             <tr>
-                <td id="p{{ forloop.counter }}-3">plan</td>
-                <td id="r{{ forloop.counter }}-3">result</td>
+                <td class="custom_td" id="p{{ forloop.counter }}-3"></td>
+                <td class="custom_td" id="r{{ forloop.counter }}-3"></td>
             </tr>
             <tr>
-                <td id="p{{ forloop.counter }}-4">plan</td>
-                <td id="r{{ forloop.counter }}-4">result</td>
+                <td class="custom_td" id="p{{ forloop.counter }}-4"></td>
+                <td class="custom_td" id="r{{ forloop.counter }}-4"></td>
             </tr>
             <tr>
-                <td id="p{{ forloop.counter }}-5">plan</td>
-                <td id="r{{ forloop.counter }}-5">result</td>
+                <td class="custom_td" id="p{{ forloop.counter }}-5"></td>
+                <td class="custom_td" id="r{{ forloop.counter }}-5"></td>
             </tr>
             <tr>
-                <td id="p{{ forloop.counter }}-6">plan</td>
-                <td id="r{{ forloop.counter }}-6">result</td>
+                <td id="p{{ forloop.counter }}-6"></td>
+                <td id="r{{ forloop.counter }}-6"></td>
             </tr>
         </table>
-    {% endfor %}
 {% endfor %}
+</div>
 {% endblock %}
