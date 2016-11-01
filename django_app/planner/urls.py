@@ -19,5 +19,6 @@ urlpatterns = [
 
     # 병현
     url(r'^score/$', views.score, name='score'),
+    url(r'^add/schedule/$', views.add_schedule, name='add_schedule'),
 
 ]
