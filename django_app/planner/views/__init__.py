@@ -1,1 +1,1 @@
-from .schedule import *
+from .score import *

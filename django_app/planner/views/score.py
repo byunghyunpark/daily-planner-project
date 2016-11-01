@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 __all__ = [
-    'schedule',
+    'score',
 ]
 
-def schedule(request):
+def score(request):
     pass
